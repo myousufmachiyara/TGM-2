@@ -63,6 +63,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/production-gatepass/{id}', [ProductionController::class, 'printGatepass'])->name('production.gatepass');
     Route::get('/production/raw-stock', [ProductionController::class, 'getRawStock'])->name('production.raw-stock');
     Route::get('/production/fg-stock',  [ProductionController::class, 'getFgStock'])->name('production.fg-stock');
+    Route::get('/production/{productionId}/fg-items', [ProductionReceivingController::class, 'getProductionFgItems'])->name('production.fg-items');
+
 
     // ── Vouchers (single tabbed page) ─────────────────────────────────
     Route::get('vouchers', [VoucherController::class, 'index'])->middleware('check.permission:vouchers.index')->name('vouchers.all');
