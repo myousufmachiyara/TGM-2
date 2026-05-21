@@ -186,7 +186,7 @@ public function print($id)
 
     $logoPath = public_path('assets/img/tgm-logo.webp');
     if (file_exists($logoPath)) {
-        $pdf->Image($logoPath, 10, 12, 60);
+        $pdf->Image($logoPath, 10, 12, 30);
     }
 
     $pdf->SetXY(130, 12);
